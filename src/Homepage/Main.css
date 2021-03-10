@@ -1,0 +1,17 @@
+.Main{
+    height: 100vh;
+}
+
+.Main #lucie{
+    width: 40%;
+    top: 20%;
+    left: 2%;
+    /* opacity: 0; */
+}
+
+.Main .fleur{
+    width: 60%;
+    top: 50%;
+    right: 0%;
+    z-index: -1;
+}

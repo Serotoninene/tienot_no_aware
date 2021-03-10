@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Homepage from './Homepage/Homepage'
+import { Switch, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {/* As soon as I start the project I design the routing system even though 
+    I'll start with the first page for now  */}
+      <Switch>
+        <Route exact path = "/" component = {Homepage}/>
+      </Switch>
     </div>
   );
 }
