@@ -1,46 +1,50 @@
 import React, { Component } from 'react';
-import {gsap, TweenLite, Power3} from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import {gsap, Power3} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
 import './Main.css'
 import '../Services.css'
+import "animate.css/animate.min.css";
+
 
 import lucie from '../assets/photos/lucie.png';
 import fleur from '../assets/photos/fleur.png';
+
+
 class Main extends Component{
     constructor(props){
         super(props)
         this.state = {
 
         }
+        
+        gsap.registerPlugin(ScrollTrigger)
+
     }
 
     componentDidMount(){
-        const lucie = document.querySelector('#lucie')
-        const fleur = document.querySelector('.fleur')
-
-        gsap.to(lucie, 1, 
-            { y : 10,
-            opacity : "100%",
-            ScrollTrigger : {
-                trigger : "#lucie",
-                start: top
-                
-                }
+        //  TENTATIVE DE DÉCLENCHER PETITE ANIMATION AVEC LE SCROLLTRIGGER DE GSAP
+        let tl = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.lucie',
+                start: 'top center',
+                markers: true,
+                toggleActions: 'play none none reverse'
             }
-            , Power3.easeIn)
-        TweenLite.to(fleur, 1, { y : -10, opacity : "100%"}, Power3.easeIn)
+        })
 
+        tl.from('.lucie', {opacity:0, duration: 1, id: 'lucief', y:30, ease:Power3.ease})
+          .from('.fleur', {opacity:0, duration:1, y:-30,id: 'fleurs', delay:-1 ,ease:Power3.easeOut})
     }
 
     render(){
         return (
             <div className = "Main relative">
-                <div id="lucie" className = "absolute" data-aos="fade-up"> 
+                <div id="" className = "absolute lucie"> 
                     <img src = {lucie} className="resp" alt = "Lucide Amiante"></img>
                 </div>
 
-                <div className = "fleur absolute" data-aos="fade-down"> 
+                <div className = "fleur absolute" animateIn="fadeIn"> 
                     <img src = {fleur} className="resp" alt = "Lucide Amiante"></img>
                 </div>
             </div>
