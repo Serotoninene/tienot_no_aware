@@ -17,9 +17,7 @@ class Main extends Component{
         this.state = {
 
         }
-        
         gsap.registerPlugin(ScrollTrigger)
-
     }
 
     componentDidMount(){
@@ -28,13 +26,12 @@ class Main extends Component{
             scrollTrigger:{
                 trigger: '.lucie',
                 start: 'top center',
-                markers: true,
                 toggleActions: 'play none none reverse'
             }
         })
 
         tl.from('.lucie', {opacity:0, duration: 1, id: 'lucief', y:30, ease:Power3.ease})
-          .from('.fleur', {opacity:0, duration:1, y:-30,id: 'fleurs', delay:-1 ,ease:Power3.easeOut})
+          .from('.fleur', {opacity:0, duration:1, y:-30,id: 'fleurs' , ease:Power3.ease}, '-=1')
     }
 
     render(){
@@ -44,7 +41,7 @@ class Main extends Component{
                     <img src = {lucie} className="resp" alt = "Lucide Amiante"></img>
                 </div>
 
-                <div className = "fleur absolute" animateIn="fadeIn"> 
+                <div className = "fleur absolute"> 
                     <img src = {fleur} className="resp" alt = "Lucide Amiante"></img>
                 </div>
             </div>

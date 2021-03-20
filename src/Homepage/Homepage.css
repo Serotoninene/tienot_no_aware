@@ -1,3 +1,7 @@
 .Homepage{
+    background-color : #F9F9F9;
+}
+
+.Homepage .container{
     flex-direction: column;
 }

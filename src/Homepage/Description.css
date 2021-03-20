@@ -1,0 +1,24 @@
+.Description{
+    margin-top: 50px;
+    height: 100vh;
+}
+
+.Description .row{
+    height: 80%;
+    justify-content: space-between;
+}
+
+.Description-photo{
+    grid-column: span 7;
+    align-items: center;
+    margin: 0 90px;
+}
+
+.Description-text{
+    grid-column: span 4;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Didot';
+    font-weight: bold;
+    line-height: 1.5rem;
+}
