@@ -18,7 +18,7 @@ class HeroBanner extends Component{
         const upTitle = document.querySelector('#title .upTitle')
         const downTitle = document.querySelector('#title .downTitle')
         const image = document.querySelector('.HeroBanner-img')
-        console.log(upTitle.innerText[2])
+        
         TweenLite.from(upTitle, {y:200, opacity:"0", delay: 0.1}, Power3.easeIn);
         TweenLite.to(upTitle, 1, {y:0}, Power3.easeIn);
         TweenLite.from(downTitle, {y:200, opacity:"0", delay: 0.5}, Power3.easeIn);
@@ -38,7 +38,7 @@ class HeroBanner extends Component{
                     </div>
                     
                     <div className = "HeroBanner-story relative">
-                            <h2 > <span>A short story ma</span>de by Etienne Glénat</h2>
+                            <h2 style = {{zIndex: "10000"}}> <span>A short story ma</span>de by Etienne Glénat</h2>
                     </div>
                 </div>
                 <p className = "absolute"> @ made by Serotoninene</p>

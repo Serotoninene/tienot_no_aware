@@ -7,19 +7,18 @@ import "./Homepage.css"
 import Navbar from '../Navbar'
 import HeroBanner from './HeroBanner'
 import Main from './Main'
+import Carousel from './Carousel'
 import Description from './Description'
 
 class Homepage extends Component{
 
     componentDidMount(){
         gsap.registerPlugin(ScrollTrigger)
-        const page = document.querySelector('body')
         let tl1 = gsap.timeline({
             scrollTrigger:{
                 trigger: '.lucie',
                 start: 'top center',
                 end: "+=300px",
-                markers: true,
                 scrub: true,
             }
         })
@@ -34,8 +33,8 @@ class Homepage extends Component{
         })
 
 
-        tl1.to('.Homepage', { duration: 1, backgroundColor: '#FF0000', ease: Power3.easeIn }, 0)
-        tl2.to('.Homepage', { duration: 1, backgroundColor: '#0000FF', ease: Power3.easeIn }, 0)
+        tl1.to('.Homepage', { duration: 1, backgroundColor: '#C9A6A6', ease: Power3.easeIn }, 0)
+        tl2.to('.Homepage', { duration: 1, backgroundColor: '#B57F7F', ease: Power3.easeIn }, 0)
         // tl.from('.lucie', {opacity:0, duration: 1, id: 'lucief', y:30, ease:Power3.ease})
 
     }
@@ -46,6 +45,7 @@ class Homepage extends Component{
                     <Navbar />
                     <HeroBanner />
                     <Main />
+                    <Carousel />
                     <Description />
                 </div>
             </div>
